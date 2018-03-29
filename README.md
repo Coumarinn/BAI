@@ -16,4 +16,5 @@ Aplikacja wymaga logowania się (możliwość logowania zarówno poprzez aplikac
 
 Głównymi funkcjonalnościami w aplikacji są: 
 	- utworzenie ogłoszenia dotyczącego biegania / treningu
+	- ogłoszenie będzie zawierało informacje takie jak miejsce, godzina, planowana 	 	  trasa w przypadku biegu itp,
 	- wyszukiwanie istniejących ogłoszeń w zależności od wskazanej lokalizacji
