@@ -27,8 +27,3 @@ Głównymi funkcjonalnościami w aplikacji są:
 
 REPOZYTORIUM PROJEKTU:
 https://github.com/Coumarinn/BAI.git
-
-<<<<<<< HEAD
-	- wyszukiwanie istniejących ogłoszeń w zależności od wskazanej lokalizacji 
-=======
->>>>>>> 89a0d7165a2072b1a54671e9c2ca0ccd2035ba68
