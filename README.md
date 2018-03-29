@@ -27,3 +27,4 @@ Głównymi funkcjonalnościami w aplikacji są:
 
 REPOZYTORIUM PROJEKTU:
 https://github.com/Coumarinn/BAI.git
+ 
