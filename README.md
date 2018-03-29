@@ -8,7 +8,7 @@ Skład zespołu:
 -> Kinga Poręba, KrZUIs2012, 208267
 
 
-Opis aplikacji:
+## Opis aplikacji:
 
 Projekt „RunME!” to aplikacja do umawiania się na wspólne bieganie i trenowanie. 
 Celem aplikacji jest umożliwienie znalezienia partnera bądź większej ilości ludzi do treningu w zależności od wybranej lokalizacji. 
@@ -25,6 +25,9 @@ Głównymi funkcjonalnościami w aplikacji są:
 
 ------------------------------------------------------------------------------------------------------------------------------
 
-REPOZYTORIUM PROJEKTU:
+## REPOZYTORIUM PROJEKTU:
 https://github.com/Coumarinn/BAI.git
+
+## WITRYNA PROJEKTU:
+https://coumarinn.github.io/BAI/
  
