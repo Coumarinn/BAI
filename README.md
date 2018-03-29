@@ -31,3 +31,5 @@ https://github.com/Coumarinn/BAI.git
 ## WITRYNA PROJEKTU:
 https://coumarinn.github.io/BAI/
  
+## ZARZĄDZANIE PROJEKTEM (TRELLO):
+https://trello.com/b/E5runXAV/bai-projekt
