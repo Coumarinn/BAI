@@ -2,8 +2,11 @@
 Skład zespołu:
 
 -> Michał Furmanek, KrZUIs2011, 208027
--> Wojciech Panek, KrZUIs20111,
--> Kinga Poręba
+
+-> Wojciech Panek, KrZUIs20111, 208248
+
+-> Kinga Poręba, KrZUIs2012, 208267
+
 
 Opis aplikacji:
 
