@@ -21,3 +21,10 @@ Głównymi funkcjonalnościami w aplikacji są:
 - ogłoszenie będzie zawierało informacje takie jak miejsce, godzina, planowana trasa w przypadku biegu itp.
 
 - wyszukiwanie istniejących ogłoszeń w zależności od wskazanej lokalizacji
+
+
+------------------------------------------------------------------------------------------------------------------------------
+
+REPOZYTORIUM PROJEKTU:
+https://github.com/Coumarinn/BAI.git
+
