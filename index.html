@@ -1,0 +1,49 @@
+<html>
+<head>
+    <title>RunME!</title>
+    <link href="https://fonts.googleapis.com/css?family=Nunito:400,600,700" rel="stylesheet">
+    <link rel="stylesheet" href="style.css"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+</head>
+<body>
+
+<div id="login_div" class="main-div">
+    <h3>Welcome!</h3>
+    <input type="email" placeholder="Email" id="email_field"/>
+    <input type="password" placeholder="Password" id="password_field"/>
+
+    <button onclick="register()">Register</button>
+    <button onclick="login()">Login to Account</button>
+    <button onclick="googleSignin()">Google Signin</button>
+</div>
+
+<div id="user_div" class="loggedin-div">
+    <h3>Welcome User</h3>
+    <p id="user_para">Welcome. You're currently logged in.</p>
+    <div id="menu_div" class="vertical-menu">
+        <a href="#" class="active">Home</a>
+        <a href="#">Szukaj treningu</a>
+        <a href="#">Dodaj ogłoszenie</a>
+        <a href="#">O aplikacji</a>
+        <a href="#">Kontakt</a>
+    </div>
+    <button onclick="logout()">Logout</button>
+</div>
+
+<script src="https://www.gstatic.com/firebasejs/4.8.1/firebase.js"></script>
+<script>
+    // Initialize Firebase
+    var config = {
+        apiKey: "AIzaSyBVFY8aHXXO6i-oD_CdD6gu7rEJWKlvAMM",
+        authDomain: "testing-6fd9c.firebaseapp.com",
+        databaseURL: "https://testing-6fd9c.firebaseio.com",
+        projectId: "testing-6fd9c",
+        storageBucket: "testing-6fd9c.appspot.com",
+        messagingSenderId: "509841486881"
+    };
+    firebase.initializeApp(config);
+</script>
+<script src="page.js"></script>
+
+</body>
+</html>
