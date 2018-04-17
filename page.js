@@ -98,10 +98,28 @@ function logout() {
     firebase.auth().signOut();
 }
 
+// function myMap() {
+//     var mapProp = {
+//         center: new google.maps.LatLng(50.06465009, 19.94497990),
+//         zoom: 10,
+//     };
+//     var map = new google.maps.Map(document.getElementById("googleMap"), mapProp);
+// }
+
 function myMap() {
-    var mapProp = {
-        center: new google.maps.LatLng(51.508742, -0.120850),
-        zoom: 5,
+    var mapCanvas = document.getElementById("googleMap");
+    var myCenter = new google.maps.LatLng(50.06465009, 19.94497990);
+    var mapOptions = {center: myCenter, zoom: 10};
+    var map = new google.maps.Map(mapCanvas,mapOptions);
+    var icon = {
+        url: "mapmarker.png",
+        scaledSize: new google.maps.Size(50, 50), // scaled size
+        origin: new google.maps.Point(0,0), // origin
+        anchor: new google.maps.Point(0, 0) // anchor
     };
-    var map = new google.maps.Map(document.getElementById("googleMap"), mapProp);
+    var marker = new google.maps.Marker({
+        position: myCenter,
+        icon: icon
+    });
+    marker.setMap(map);
 }
