@@ -84,7 +84,7 @@ function register() {
     var userEmail = document.getElementById("email_field").value;
     var userPass = document.getElementById("password_field").value;
 
-    firebase.auth().createUserWithEmailAndPassword(userEmail, userPass).catch(function(error) {
+    firebase.auth().createUserWithEmailAndPassword(userEmail, userPass).catch(function (error) {
         // Handle Errors here.
         var errorCode = error.code;
         var errorMessage = error.message;
@@ -96,4 +96,12 @@ function register() {
 
 function logout() {
     firebase.auth().signOut();
+}
+
+function myMap() {
+    var mapProp = {
+        center: new google.maps.LatLng(51.508742, -0.120850),
+        zoom: 5,
+    };
+    var map = new google.maps.Map(document.getElementById("googleMap"), mapProp);
 }
