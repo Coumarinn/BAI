@@ -17,26 +17,10 @@
     background-color: #222;
 }
 
-/* closed state */
-/* #sidebar .list-group .list-group-item[aria-expanded="false"]::after {
-  content: " \f0d7";
-  font-family: FontAwesome;
-  display: inline;
-  text-align: right;
-  padding-left: 5px;
-} */
-
 /* open state */
 #sidebar .list-group .list-group-item[aria-expanded="true"] {
   background-color: #222;
 }
-/* #sidebar .list-group .list-group-item[aria-expanded="true"]::after {
-  content: " \f0da";
-  font-family: FontAwesome;
-  display: inline;
-  text-align: right;
-  padding-left: 5px;
-} */
 
 /* level 1*/
 #sidebar .list-group .collapse .list-group-item  {
@@ -64,11 +48,6 @@
         text-align: center;
         padding: .75rem .5rem;
     }
-    /* hide caret icons of top level when collapsed */
-    /* #sidebar .list-group > .list-group-item[aria-expanded="true"]::after,
-    #sidebar .list-group > .list-group-item[aria-expanded="false"]::after {
-        display:none;
-    } */
 }
 
 /* change transition animation to width when entire sidebar is toggled */
@@ -95,9 +74,4 @@
 
 #sidebar {
     padding: 0 !important;
-}
-
-.centerCarousel {
-    margin: auto;
-    width: 50%;
 }

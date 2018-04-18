@@ -12,11 +12,12 @@
     <link rel="stylesheet" href="sidebar/sidebar.css"/>
     <link rel="stylesheet" href="carousel/carousel.css"/>
     <link rel="stylesheet" href="stickyFooter/stickyFooter.css"/>
+    <link rel="stylesheet" href="home/home.css"/>
     
 </head>
 <body>
 
-<div data-include="main"></div>
+<div id="x" data-include="main"></div>
 <!-- <div data-include="sidebar"></div> -->
 <!-- <div data-include="carousel"></div> -->
 <div data-include="stickyFooter"></div>
@@ -93,12 +94,16 @@
             $(this).load(file);
           });
         });
+        $( document ).ready(function() {
+            $("#content").load("home/home.html");
+        });
 </script>
 
 <script src="page.js"></script>
 <script src="main/main.js"></script>
 <script src="carousel/carousel.js"></script>
 <script src="stickyFooter/stickyFooter.js"></script>
+<script src="notices/notices.js"></script>
 
 </body>
 </html>
