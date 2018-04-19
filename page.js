@@ -7,7 +7,9 @@ $(function(){
   });
 
 $( document ).ready(function() {
-    $("#content").load("home/home.html");
+    setTimeout(function(){ 
+        $("#content").load("home/home.html");
+    },  100);
 });
 
 firebase.auth().onAuthStateChanged(function (user) {
