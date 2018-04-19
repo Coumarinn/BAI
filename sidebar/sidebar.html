@@ -1,0 +1,33 @@
+<div class="container-fluid">
+    <div class="row" style="height: 90%;">
+        <div class="col-md-2 col-xs-1 p-l-0 p-r-0 collapse in" id="sidebar" 
+        style="height: 100%; border-right: 1px solid #ddd; border-bottom: 1px solid #ddd; 
+        background-color:#343a40 !important">
+            <div class="list-group panel">
+                <a onclick="goToHomePage()" class="list-group-item collapsed" data-parent="#sidebar" 
+                style="cursor: pointer">
+                    <i class="far fa-comment"></i>
+                    <span class="hidden-sm-down" style="padding:20px">Strona główna</span>
+                </a>
+                <a onclick="goTo5kmNotices()" class="list-group-item collapsed" data-parent="#sidebar" 
+                style="cursor: pointer">
+                    <i class="far fa-comment"></i>
+                    <span class="hidden-sm-down" style="padding:20px">5 km</span>
+                </a>
+                <a onclick="goTo10kmNotices()" class="list-group-item collapsed" data-parent="#sidebar" 
+                style="cursor: pointer">
+                    <i class="far fa-comment"></i>
+                    <span class="hidden-sm-down" style="padding:20px">10 km</span>
+                </a>
+                <a onclick="goTo20kmNotices()" class="list-group-item collapsed" data-parent="#sidebar" 
+                style="cursor: pointer">
+                    <i class="fa far fa-comment"></i>
+                    <span class="hidden-sm-down" style="padding:20px">20 km</span>
+                </a>
+            </div>
+        </div>
+        <main id="main" class="col-md-10 col-xs-11 p-l-2 p-t-2 centerCarousel">
+            <div id="content"></div>
+        </main>
+    </div>
+</div>

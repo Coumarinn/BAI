@@ -1,3 +1,15 @@
+$(function(){
+    var includes = $('[data-include]');
+    jQuery.each(includes, function(){
+      var file = $(this).data('include') + '/' + $(this).data('include') + '.html';
+      $(this).load(file);
+    });
+  });
+
+$( document ).ready(function() {
+    $("#content").load("home/home.html");
+});
+
 firebase.auth().onAuthStateChanged(function (user) {
     if (user) {
         // User is signed in.

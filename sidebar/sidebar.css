@@ -1,0 +1,41 @@
+#sidebar .list-group-item {
+    border-radius: 0;
+    background-color: #343a40 !important;
+    color: white;
+    border-left: 0;
+    border-right: 0;
+    border-color: #ddd;
+    white-space: nowrap;
+}
+
+#sidebar .list-group-item:hover {
+    background-color: white !important;
+    color: black !important;
+}
+
+@media (max-width:48em) {
+    /* overlay sub levels on small screens */
+    #sidebar .list-group .collapse.in, #sidebar .list-group .collapsing {
+        position: absolute;
+        z-index: 1;
+        width: 190px;
+    }
+    #sidebar .list-group > .list-group-item {
+        text-align: center;
+        padding: .75rem .5rem;
+    }
+}
+
+/* change transition animation to width when entire sidebar is toggled */
+#sidebar.collapse {
+  -webkit-transition-timing-function: ease;
+       -o-transition-timing-function: ease;
+          transition-timing-function: ease;
+  -webkit-transition-duration: .2s;
+       -o-transition-duration: .2s;
+          transition-duration: .2s;
+}
+
+#sidebar {
+    padding: 0 !important;
+}
