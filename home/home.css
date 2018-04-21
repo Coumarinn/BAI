@@ -1,4 +1,13 @@
-.centerCarousel {
-    margin: auto;
-    width: 50%;
+@media screen and (min-width: 576px) {
+    .centerCarousel {
+        margin: auto;
+        width: 50%;
+    }
+}
+
+@media screen and (max-width: 767px) {
+
+    #home {
+        padding: 15px 0px !important;
+    }
 }
