@@ -1,5 +1,5 @@
 //routing
-var app = Sammy('#main', function() {  
+var app = Sammy('#main', function() {
 
     this.get('#/', function() {
         window.location = "#/login";
@@ -32,8 +32,12 @@ var app = Sammy('#main', function() {
         loadMultipleHtmlFiles("notices");
     });
 
+    this.get('#/add', function() {
+        loadMultipleHtmlFiles("noticesAdd");
+    });
+
   });
-  
+
   app.run('#/login');
 //routing
 
@@ -44,13 +48,13 @@ function loadMultipleHtmlFiles(content) {
     defArr.push($.get('stickyFooter/stickyFooter.html'));
     $.when.apply($,defArr).done(function(response1, response2, response3){
         if($('#sidebar').length == 0){
-            $('#main').html(response1[2].responseText + response2[2].responseText 
+            $('#main').html(response1[2].responseText + response2[2].responseText
                 + response3[2].responseText);
             loadContent(content);
             $("#menuButton").click(); //tymczasowe rozwiązanie
         } else {
             loadContent(content);
-        }        
+        }
     });
 }
 

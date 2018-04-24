@@ -1,28 +1,33 @@
 <div class="container-fluid">
     <div class="row" style="height: 90%;">
-        <div class="col-lg-2 col-md-3 col-sm-4 col-xs-1 p-l-0 p-r-0 collapse in" id="sidebar" 
-            style="height: 100%; border-right: 1px solid #ddd; border-bottom: 1px solid #ddd; 
+        <div class="col-lg-2 col-md-3 col-sm-4 col-xs-1 p-l-0 p-r-0 collapse in" id="sidebar"
+            style="height: 100%; border-right: 1px solid #ddd; border-bottom: 1px solid #ddd;
             background-color:#343a40 !important">
             <div class="list-group panel">
-                <a href="#/home" onclick="goToHomePage()" class="list-group-item collapsed" 
+                <a href="#/home" onclick="goToHomePage()" class="list-group-item collapsed"
                     data-parent="#sidebar" style="cursor: pointer">
                     <i class="fas fa-home"></i>
                     <span class="hidden-sm-down" style="padding:10px">Strona główna</span>
                 </a>
-                <a href="#/5km" onclick="goTo5kmNotices()" class="list-group-item collapsed" 
+                <a href="#/5km" onclick="goTo5kmNotices()" class="list-group-item collapsed"
                 data-parent="#sidebar" style="cursor: pointer">
                     <i class="far fa-comment"></i>
                     <span class="hidden-sm-down" style="padding:10px">5 km</span>
                 </a>
-                <a href="#/10km" onclick="goTo10kmNotices()" class="list-group-item collapsed" 
+                <a href="#/10km" onclick="goTo10kmNotices()" class="list-group-item collapsed"
                     data-parent="#sidebar" style="cursor: pointer">
                     <i class="far fa-comment"></i>
                     <span class="hidden-sm-down" style="padding:10px">10 km</span>
                 </a>
-                <a href="#/20km" onclick="goTo20kmNotices()" class="list-group-item collapsed" 
+                <a href="#/20km" onclick="goTo20kmNotices()" class="list-group-item collapsed"
                     data-parent="#sidebar" style="cursor: pointer">
                     <i class="fa far fa-comment"></i>
                     <span class="hidden-sm-down" style="padding:10px">20 km</span>
+                </a>
+                <a href="#/add" onclick="loadNotices()" class="list-group-item collapsed"
+                    data-parent="#sidebar" style="cursor: pointer">
+                    <i class="fa far fa-comment"></i>
+                    <span class="hidden-sm-down" style="padding:10px">Dodaj ogłoszenie</span>
                 </a>
             </div>
         </div>
