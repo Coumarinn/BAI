@@ -26,6 +26,7 @@ function logIn(){
     });
 }
 
+var provider = new firebase.auth.FacebookAuthProvider();
 function logInByFacebook(){
     firebase.auth()
 
@@ -44,6 +45,7 @@ function logInByFacebook(){
     });
 }
 
+var provider = new firebase.auth.GoogleAuthProvider();
 function logInByGoogle(){
     firebase.auth()
 
