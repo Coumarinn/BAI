@@ -1,16 +1,13 @@
-var collapse = false;
-
 $(document).on("click","#menuButton", function (event) {
-    collapse = !collapse; //zamiast ifa sprawdzać element sidebar
-    if(collapse == true){
-        $("main").removeClass("col-lg-12").addClass("col-lg-10");
-        $("main").removeClass("col-md-12").addClass("col-md-9");
-        $("main").removeClass("col-sm-12").addClass("col-sm-8");
-        $("main").removeClass("col-xs-12").addClass("col-xs-11");
-    } else {
+    if(event.currentTarget.className == "collapsed"){
         $("main").removeClass("col-lg-10").addClass("col-lg-12");
         $("main").removeClass("col-md-9").addClass("col-md-12");
         $("main").removeClass("col-sm-8").addClass("col-sm-12");
         $("main").removeClass("col-xs-11").addClass("col-xs-12");
+    } else {
+        $("main").removeClass("col-lg-12").addClass("col-lg-10");
+        $("main").removeClass("col-md-12").addClass("col-md-9");
+        $("main").removeClass("col-sm-12").addClass("col-sm-8");
+        $("main").removeClass("col-xs-12").addClass("col-xs-11");
     }
 });

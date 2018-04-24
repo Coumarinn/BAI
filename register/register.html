@@ -1,0 +1,32 @@
+<form class="form-signin">
+        <h5 class="form-signin-heading text-center" style="color: #626262">Załóż konto</h5>
+        <a href="/" class="btn btn-md btn-primary btn-block rounded-0" type="submit" 
+            style="background-color:#48629b; border-color: #48629b" onclick="signInByFacebook()">
+            <i class="fab fa-facebook-f" style="float: left; font-size: 24px;"></i>
+            <span class="underlineSpanText">
+                Załóż konto przez <b>Facebook</b>
+            </span>
+        </a>
+        <a href="/" class="btn btn-md btn-danger btn-block rounded-0" type="submit" 
+            style="background-color:#dc4b38; border-color: #dc4b38" onclick="signInByGoogle()">
+            <i class="fab fa-google" style="float: left; font-size: 24px; margin-left: -4px;"></i>
+            <span class="underlineSpanText">
+                Załóż konto przez <b>Google</b>
+            </span>
+        </a>
+        <p class="text-center" style="margin-top:15px">lub</p>
+        <label for="inputEmail" class="sr-only">Email</label>
+        <input type="email" id="inputEmail" class="form-control rounded-0" placeholder="Email" required autofocus>
+        <label for="inputPassword" class="sr-only">Hasło - minimum 6 znaków</label>
+        <input type="password" id="inputPassword" class="form-control rounded-0" 
+            placeholder="Hasło - minimum 6 znaków" minlength="6" required>
+        <button class="btn btn-md btn-success btn-block rounded-0" type="submit" onclick="createAccount()">
+            Załóż konto za darmo
+        </button>
+        <br/>
+        <a href="#/login" style="color: black; text-align: center;" onclick="logIn()">
+            <p>
+                Masz już konto? <b>Zaloguj się</b>
+            </p>
+        </a>
+      </form>

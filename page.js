@@ -1,16 +1,64 @@
-$(function(){
-    var includes = $('[data-include]');
-    jQuery.each(includes, function(){
-      var file = $(this).data('include') + '/' + $(this).data('include') + '.html';
-      $(this).load(file);
-    });
-  });
+//routing
+var app = Sammy('#main', function() {  
 
-$( document ).ready(function() {
-    setTimeout(function(){ 
-        $("#content").load("home/home.html");
-    },  100);
-});
+    this.get('#/', function() {
+        window.location = "#/login";
+        $("#main").load("login/login.html");
+    });
+
+    this.get('#/login', function() {
+        $("#main").load("login/login.html");
+    });
+    this.get('#/register', function() {
+        $("#main").load("register/register.html");
+    });
+    this.get('#/forgotPassword', function() {
+        $("#main").load("forgotPassword/forgotPassword.html");
+    });
+
+    this.get('#/home', function() {
+        loadMultipleHtmlFiles("home");
+    });
+
+    this.get('#/5km', function() {
+        loadMultipleHtmlFiles("notices");
+    });
+
+    this.get('#/10km', function() {
+        loadMultipleHtmlFiles("notices");
+    });
+
+    this.get('#/20km', function() {
+        loadMultipleHtmlFiles("notices");
+    });
+
+  });
+  
+  app.run('#/login');
+//routing
+
+function loadMultipleHtmlFiles(content) {
+    var defArr = [];
+    defArr.push($.get('navbar/navbar.html'));
+    defArr.push($.get('sidebar/sidebar.html'));
+    defArr.push($.get('stickyFooter/stickyFooter.html'));
+    $.when.apply($,defArr).done(function(response1, response2, response3){
+        if($('#sidebar').length == 0){
+            $('#main').html(response1[2].responseText + response2[2].responseText 
+                + response3[2].responseText);
+            loadContent(content);
+            $("#menuButton").click(); //tymczasowe rozwiązanie
+        } else {
+            loadContent(content);
+        }        
+    });
+}
+
+function loadContent(content){
+    var url = content + '/' + content + '.html';
+    var html = $.ajax({type: "GET", url: url, async: false}).responseText;
+    $("#content").html(html);
+}
 
 firebase.auth().onAuthStateChanged(function (user) {
     if (user) {

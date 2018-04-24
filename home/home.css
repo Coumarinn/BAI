@@ -7,7 +7,7 @@
 
 @media screen and (max-width: 767px) {
 
-    #home {
+    .home {
         padding: 15px 0px !important;
     }
 }

@@ -1,3 +1,4 @@
+<!DOCTYPE html>
 <html>
 
 <head>
@@ -7,9 +8,10 @@
 
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.0/css/bootstrap.min.css" integrity="sha384-9gVQ4dYFwwWSjIDZnLEWnxCjeSWFphJiwGPXr1jddIhOegiu1FwO5qRGvFXOdJZ4"
         crossorigin="anonymous">
-    <link href="https://fonts.googleapis.com/css?family=Nunito:400,600,700" rel="stylesheet">
-
+    <link rel="stylesheet" href="css/bootstrap-social.css" />
     <link rel="stylesheet" href="style.css" />
+    <link rel="stylesheet" href="login/login.css" />
+    <link rel="stylesheet" href="register/register.css" />
     <link rel="stylesheet" href="navbar/navbar.css" />
     <link rel="stylesheet" href="sidebar/sidebar.css" />
     <link rel="stylesheet" href="stickyFooter/stickyFooter.css" />
@@ -19,56 +21,13 @@
 </head>
 
 <body>
-    
+
     <wrapper class="d-flex flex-column">
-        <div data-include="navbar"></div>
-        <div data-include="sidebar"></div>
-        <div data-include="stickyFooter"></div>
+        <div id="main"></div>
     </wrapper>
 
-
-    <!-- <div class="section" id="contacts">
-    <h1>
-        <span>Follow Us</span>
-    </h1>
-    <div>
-        <a href="https://www.sololearn.com/" target="_blank">
-            <img alt="SoloLearn" src="https://www.sololearn.com/Uploads/icons/sololearn.png" />
-        </a>
-        <a href="#">
-            <img alt="Facebook" src="https://www.sololearn.com/Uploads/icons/facebook.png" />
-        </a>
-        <a href="#">
-            <img alt="Twitter" src="https://www.sololearn.com/Uploads/icons/twitter.png" />
-        </a>
-</div> -->
-
-    <div id="login_div" class="main-div">
-        <h3>Welcome!</h3>
-        <input type="email" placeholder="Email" id="email_field" />
-        <input type="password" placeholder="Password" id="password_field" />
-
-        <button onclick="register()">Register</button>
-        <button onclick="login()">Login to Account</button>
-        <button onclick="googleSignin()">Google Signin</button>
-        <button onclick="facebookLogin()">Facebook login</button>
-    </div>
-
-    <div id="user_div" class="loggedin-div">
-        <h3>Welcome User</h3>
-        <p id="user_para">Welcome. You're currently logged in.</p>
-        <div id="menu_div" class="vertical-menu">
-            <a href="#" class="active">Home</a>
-            <a href="#">Szukaj treningu</a>
-            <a href="#">Dodaj ogłoszenie</a>
-            <a href="#">O aplikacji</a>
-            <a href="map.html">Mapa</a>
-            <a href="#">Kontakt</a>
-        </div>
-        <button onclick="logout()">Logout</button>
-    </div>
-
     <script src="js/jquery.min.js"></script>
+    <script src="js/sammy.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.0/umd/popper.min.js" integrity="sha384-cs/chFZiN24E4KMATLdqdvsezGxaGsi4hLGOzlXwp5UZB1LY//20VyM2taTB4QvJ"
         crossorigin="anonymous"></script>
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.0/js/bootstrap.min.js" integrity="sha384-uefMccjFJAIv6A+rW+L4AHf99KvxDjWSu1z9VI8SKNVmz4sk7buKt/6v9KI65qnm"
@@ -90,6 +49,8 @@
     </script>
 
     <script src="page.js"></script>
+    <script src="login/login.js"></script>
+    <script src="register/register.js"></script>
     <script src="navbar/navbar.js"></script>
     <script src="sidebar/sidebar.js"></script>
     <script src="stickyFooter/stickyFooter.js"></script>

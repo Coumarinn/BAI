@@ -10,14 +10,10 @@ function goTo20kmNotices (){
 }
 
 function loadNotices (){
-    // $('#main').removeClass("centerCarousel");
-    $("#content").load("notices/notices.html");
     setAsActive();
 }
 
 function goToHomePage(){
-    // $('#main').addClass("centerCarousel");
-    $("#content").load("home/home.html");
     setAsActive();
 }
 
