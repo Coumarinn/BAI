@@ -20,3 +20,7 @@ function goToHomePage(){
 function setAsActive() {
     console.log("setAsActive")
 }
+
+function logOut(){
+    firebase.auth().signOut();
+}

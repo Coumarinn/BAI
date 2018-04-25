@@ -1,6 +1,8 @@
 firebase.auth().onAuthStateChanged(user => {
     if(user) {
         window.location = '#/home'; //After successful login, user will be redirected to home
+    } else {
+        window.location = '#/login';
     }
 });
 
