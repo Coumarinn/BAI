@@ -26,26 +26,6 @@ function logIn(){
         window.alert("Error : " + errorMessage);
         // ...
     });
-    // firebase.auth().signInWithEmailAndPassword(userEmail, userPass).then(
-    //     (user) => {
-    //         if(user) {
-    //             window.location = '#/home'; //After successful login, user will be redirected to home
-    //         } else {
-    //             window.location = '#/login';
-    //         }
-    //     },
-    //     function(err) {
-    //         console.log(err.message)
-    //     }
-    // )
-
-        // Handle Errors here.
-        // var errorCode = error.code;
-        // var errorMessage = error.message;
-        //
-        // window.alert("Error : " + errorMessage);
-
-        // ...
 
 }
 
