@@ -18,7 +18,4 @@ function createAccount() {
     });
 }
 
-function logIn(){
-    firebase.auth().signOut();
-}
 

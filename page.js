@@ -1,3 +1,13 @@
+// Firebase
+var config = {
+    apiKey: "AIzaSyDqm0kYgHjvWz7h56lOo4oIqCd3xcTq1t8",
+    authDomain: "runme-723cc.firebaseapp.com",
+    databaseURL: "https://runme-723cc.firebaseio.com",
+    projectId: "runme-723cc",
+    storageBucket: "runme-723cc.appspot.com",
+    messagingSenderId: "216795094485"
+};
+firebase.initializeApp(config);
 //routing
 var app = Sammy('#main', function() {
 
