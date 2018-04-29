@@ -1,3 +1,44 @@
 .navbarShadow {
     box-shadow: 0px 0px 2px 0px;
 }
+
+@media screen and (max-width: 575px) {
+    .myAccountMobileStyle {
+        text-align: center;
+    }
+    .avatarPosition {
+        margin-top: 5px !important;
+    }
+    .myAccountContainerMobile {
+        right: -15px;
+    }
+    .myAccountButton {
+        width: 100% !important;
+        margin-left: 0px !important;
+    }
+    .changePasswordButton, .logOutButton, .buttonSize {
+        width: 100% !important;
+        margin-bottom: 5px;
+    }
+
+    .myAccountButton, .changePasswordButton, .logOutButton {
+        padding: 10px;
+    }
+
+    .userInformation {
+        margin: 0 !important;
+        padding: 0 !important;
+
+    }
+    .firstRow {
+        margin: 0 !important;
+    }
+    
+    .secondRow {
+        border: 0 !important;
+    }
+}
+
+.dropdown-toggle::after {
+    display: none;
+}

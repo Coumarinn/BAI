@@ -65,6 +65,7 @@ function loadMultipleHtmlFiles(content) {
         } else {
             loadContent(content);
         }
+        getMyAccountWidth();
     });
 }
 
@@ -132,4 +133,18 @@ function myMap() {
         icon: icon
     });
     marker.setMap(map);
+}
+
+$(window).resize(function(){
+    getMyAccountWidth();
+});
+
+function getMyAccountWidth() {
+    var width = window.innerWidth;
+    if(width < 576){
+        $('#myAccount').css({"width": width, 'border-left': "0", 'border-right': "0"});
+    } else {
+        $('#myAccount').css({"width": 400, 'border-left': "1px solid #ddd", 
+        'border-right': "1px solid #ddd"});
+    }
 }

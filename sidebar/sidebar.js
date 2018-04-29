@@ -16,11 +16,3 @@ function loadNotices (){
 function goToHomePage(){
     setAsActive();
 }
-
-function setAsActive() {
-    console.log("setAsActive")
-}
-
-function logOut(){
-    firebase.auth().signOut();
-}

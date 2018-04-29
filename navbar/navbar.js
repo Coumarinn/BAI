@@ -11,3 +11,7 @@ $(document).on("click","#menuButton", function (event) {
         $("main").removeClass("col-xs-12").addClass("col-xs-11");
     }
 });
+
+function logOut(){
+    firebase.auth().signOut();
+}
