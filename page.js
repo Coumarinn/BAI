@@ -71,7 +71,24 @@ function loadMultipleHtmlFiles(content) {
 function loadContent(content){
     var url = content + '/' + content + '.html';
     var html = $.ajax({type: "GET", url: url, async: false}).responseText;
+    if(html.indexOf('id="date" value=""', 'type="date"') >= 0){
+        html = addCurrentDateAndTime(html);
+    }
     $("#content").html(html);
+}
+
+function addCurrentDateAndTime(html){
+    var currentDate = new Date();
+    var options = { day: 'numeric', month: 'numeric', year: 'numeric', hour: 'numeric', minute: 'numeric' };
+    var dateAndTime = currentDate.toLocaleDateString('pl-PL', options).split(',');
+    var date = dateAndTime[0].replace(/\s/g, '').split('.').reverse().join('-');
+    var time = dateAndTime[1].replace(/\s/g, '');
+    var dateString = 'type="date" value="' + date + '"';
+    var timeString = 'type="time" value="' + time + '"';
+    var newHtml = html
+    .replace('id="date" value=""', dateString)
+    .replace('id="time" value=""', timeString);
+    return newHtml;
 }
 
 // firebase.auth().onAuthStateChanged(function (user) {

@@ -1,14 +1,41 @@
 <div class="row" style="padding: 20px 5px 0px 20px">
-  <form>
-  <ul class="list-group d-inline-block" style="padding-bottom: 20px">
-    <li class="list-group-item active">Utworz ogloszenie</li>
-    <li class="list-group-item"><b>Miejsce: </b><input type="text" id="place" placeholder="Miejsce..."/> </li>
-    <li class="list-group-item"><b>Data: </b><input id="date" type="date" placeholder="Dzien..."/></li>
-    <li class="list-group-item"><b>Godzina: </b><input id="time" type="time" placeholder="Godzina..."/></li>
-    <li class="list-group-item"><b>Opis: </b><textarea id="description" placeholder="Any comments..."/></textarea></li>
-    <li class="list-group-item">
-        <button type="button" class="btn" onclick="pushData()">Dodaj</button>
-    </li>
-  </ul>
-</form>
+  <form class="col-12" style="padding: 0px;">
+    <ul class="list-group d-inline-block col-lg-12 col-md-12 col-sm-12 col-xs-12" style="padding-bottom: 20px;">
+      <li class="list-group-item active">Utworz ogłoszenie</li>
+      <li class="list-group-item" style="border-bottom: 0;">
+        <div class="form-group row">
+          <label for="place" class="col-lg-1 col-md-2 col-sm-3 col-xs-4
+          col-form-label font-weight-bold labelMobileStyle">Miejsce: </label>
+          <div class="col-lg-11 col-md-10 col-sm-9 col-xs-8">
+            <input class="form-control" type="text" id="place" placeholder="Miejsce"/>
+          </div>
+        </div>
+        <div class="form-group row">
+          <label for="date" class="col-lg-1 col-md-2 col-sm-3 col-xs-4 
+          col-form-label font-weight-bold labelMobileStyle">Data: </label>
+          <div class="col-lg-11 col-md-10 col-sm-9 col-xs-8">
+            <input class="form-control" type="date" id="date" value="" name="date"/>
+          </div>
+        </div>
+        <div class="form-group row">
+          <label for="time" class="col-lg-1 col-md-2 col-sm-3 col-xs-4 
+          col-form-label font-weight-bold labelMobileStyle">Godzina: </label>
+          <div class="col-lg-11 col-md-10 col-sm-9 col-xs-8">
+            <input class="form-control" type="time" id="time" value="" name="time"/>
+          </div>
+        </div>
+        <div class="form-group row">
+          <label for="description" class="col-lg-1 col-md-2 col-sm-3 col-xs-4 
+          col-form-label font-weight-bold labelMobileStyle">Opis:</label>
+          <div class="col-lg-11 col-md-10 col-sm-9 col-xs-8">
+            <textarea class="form-control" id="description" rows="3" placeholder="Opis..."></textarea>
+          </div>
+        </div>
+        <li class="list-group-item text-right" style="border-top: 0; padding-top: 5px;">
+          <button type="button" class="btn btn-outline-info" onclick="pushData()">
+            Dodaj
+          </button>
+        </div>
+    </ul>
+  </form>
 </div>

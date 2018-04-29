@@ -1,14 +1,15 @@
 function pushData(){
-
-    var place = document.getElementById("place").value;
-    var date = document.getElementById("date").value;
-    var time = document.getElementById("time").value;
-    var description = document.getElementById("description").value;
+    var place = $("#place").val();
+    var date = document.getElementsByName("date")[0].value
+    var time = document.getElementsByName("time")[0].value
+    var description = $("#description").val();
     var userId =   firebase.auth().currentUser.uid;
     var userEmail = firebase.auth().currentUser.email;
     var createdAt = firebase.database.ServerValue.TIMESTAMP;
 
-    if (place == '' || time == '' || date == '') {
+    if ((place == '' || place == undefined) || 
+       (time == '' || time == undefined)  || 
+       (date == '' || date == undefined) ) {
       window.alert("Uzupelnij pole miejsce i czas");
     } else {
       var firebaseRef = firebase.database().ref();
