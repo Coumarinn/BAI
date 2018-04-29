@@ -46,6 +46,9 @@ var app = Sammy('#main', function() {
         loadMultipleHtmlFiles("noticesAdd");
     });
 
+    this.get('#/changePassword', function() {
+        loadMultipleHtmlFiles("changePassword");
+    });
   });
 
   app.run('#/login');

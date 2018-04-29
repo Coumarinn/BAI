@@ -35,8 +35,8 @@ function notesFromFB(user, place, date, time, description, key){
     <li class="list-group-item"><b>Godzina: </b>' + time +'</li>\
     <li class="list-group-item"><b>Opis: </b>' + description +'</li>\
     <li class="list-group-item">\
-        <button type="button" class="btn btn-outline-primary join col-md-4" note-key=' + key + '>Dołącz</button>\
-        <button type="button" class="btn btn-outline-secondary cancel col-md-4 d-none">Anuluj</button>\
+        <button type="button" class="btn btn-outline-primary join col-md-4 rounded-0" note-key=' + key + '>Dołącz</button>\
+        <button type="button" class="btn btn-outline-secondary cancel col-md-4 d-none rounded-0">Anuluj</button>\
     </li>\
   </ul>';
 
