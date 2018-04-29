@@ -24,18 +24,18 @@ function cancel(){
     console.log("anuluj");
 }
 
-function notesFromFB(place, date, time, description){
+function notesFromFB(user, place, date, time, description, key){
   var frag = document.getElementById("notices");
 
   var elem = document.createElement('div');
   elem.innerHTML = '<ul class="list-group col-md-6 d-inline-block" style="padding-bottom: 20px">\
-    <li class="list-group-item active">Uzytkownik, ktory stworzyl</li>\
-    <li class="list-group-item"><b>Miejsce:</b>'+ place +'</li>\
-    <li class="list-group-item"><b>Data:</b>' + date +'</li>\
-    <li class="list-group-item"><b>Godzina:</b>' + time +'</li>\
-    <li class="list-group-item"><b>Opis: ...</b>' + description +'</li>\
+    <li class="list-group-item active">' + user.substring(0, user.lastIndexOf("@")) +'</li>\
+    <li class="list-group-item"><b>Miejsce: </b>'+ place +'</li>\
+    <li class="list-group-item"><b>Data: </b>' + date +'</li>\
+    <li class="list-group-item"><b>Godzina: </b>' + time +'</li>\
+    <li class="list-group-item"><b>Opis: </b>' + description +'</li>\
     <li class="list-group-item">\
-        <button type="button" class="btn btn-outline-primary col-md-4">Dołącz</button>\
+        <button type="button" class="btn btn-outline-primary col-md-4" note-key=' + key + '>Dołącz</button>\
         <button type="button" class="btn btn-outline-secondary col-md-4 d-none">Anuluj</button>\
     </li>\
   </ul>';
@@ -56,8 +56,8 @@ function addFromFB(){
   }
   database.once("value", function(snapshot) {
     snapshot.forEach(function(child) {
-      //console.log(child.key+": "+child.child("place").val());
-      notesFromFB(child.child("place").val(), child.child("date").val(), child.child("time").val(), child.child("description").val());
+      let note = child.val();
+      notesFromFB(note.userEmail, note.place, note.date, note.time, note.description, child.key);
     });
   });
 }
