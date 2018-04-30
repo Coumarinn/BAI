@@ -1,56 +1,20 @@
-function myMap() {
-    var mapCanvas = document.getElementById("googleMap");
-    var myCenter = new google.maps.LatLng(50.06465009, 19.94497990);
-    var mapOptions = {center: myCenter, zoom: 10};
-    var map = new google.maps.Map(mapCanvas,mapOptions);
-    var icon = {
-        url: "mapmarker.png",
-        scaledSize: new google.maps.Size(50, 50), // scaled size
-        origin: new google.maps.Point(0,0), // origin
-        anchor: new google.maps.Point(0, 0) // anchor
-    };
-    var marker = new google.maps.Marker({
-        position: myCenter,
-        icon: icon
-    });
-    marker.setMap(map);
-}
+navigator.geolocation.getCurrentPosition(onSuccess, onError, { timeout: 30000 });
 
-// function geoFindMe() {
-//     var output = document.getElementById("out");
-//
-//     if (!navigator.geolocation){
-//         output.innerHTML = "<p>Geolokalizacja nie jest wspierana przez Twoja przegladarke!</p>";
-//         return;
-//     }
-//
-//     var icon = {
-//         url: "mapmarker.png",
-//         scaledSize: new google.maps.Size(50, 50), // scaled size
-//         origin: new google.maps.Point(0,0), // origin
-//         anchor: new google.maps.Point(0, 0) // anchor
-//     };
-//     var marker = new google.maps.Marker({
-//         position: myCenter,
-//         icon: icon
-//     });
-//
-//     function success(position) {
-//         var latitude  = position.coords.latitude;
-//         var longitude = position.coords.longitude;
-//
-//         output.innerHTML = '<p>Szerokoscc geograficzna ' + latitude + '° <br>Dlugosc geograficzna ' + longitude + '°</p>';
-//
-//         var img = new Image();
-//         img.src = "https://maps.googleapis.com/maps/api/staticmap?center=" + latitude + "," + longitude + "&zoom=13&size=300x300&sensor=false";
-//         output.appendChild(img);
-//     }
-//
-//     function error() {
-//         output.innerHTML = "BLAD!";
-//     }
-//
-//     output.innerHTML = "<p>Locating…</p>";
-//
-//     navigator.geolocation.getCurrentPosition(success, error);
-// }
+function onSuccess(position) {
+    var lat=position.coords.latitude;
+    var lang=position.coords.longitude;
+
+//Google Maps
+    var myLatlng = new google.maps.LatLng(lat,lang);
+    var mapOptions = {zoom: 10,center: myLatlng}
+    var map = new google.maps.Map(document.getElementById('map-canvas'), mapOptions);
+    var marker = new google.maps.Marker({position: myLatlng,map: map});
+}
+function onError(error) {
+    alert('code: ' + error.code + '\n' +
+        'message: ' + error.message + '\n');
+}
+google.maps.event.addDomListener(window, 'load', onSuccess);
+
+
+//to powinno pracowac na apce tez, po konwersji phonegapa
