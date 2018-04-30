@@ -45,7 +45,8 @@ function notesFromFB(user, place, date, time, description, key){
     <li class="list-group-item"><b>Data: </b>' + date +'</li>\
     <li class="list-group-item"><b>Godzina: </b>' + time +'</li>\
     <li class="list-group-item"><b>Opis: </b>' + description +'</li>\
-    <li class="list-group-item"><b>Uczestnicy: </b></li>\
+    <li class="list-group-item"><b>Uczestnicy:&nbsp; </b><span id="members-'+ key + '">\
+    </span></li>\
     <li class="list-group-item">\
         <button type="button" class="btn btn-outline-primary join col-md-4 rounded-0" id=' + key + '>Dołącz</button>\
         <button type="button" class="btn btn-outline-secondary cancel col-md-4 d-none rounded-0" id=' + key + '>Anuluj</button>\
@@ -56,6 +57,16 @@ function notesFromFB(user, place, date, time, description, key){
         frag.appendChild(elem.childNodes[0]);
     }
     return frag;
+}
+
+function addMembers(member, key) {
+  let ident = "members-" + key;
+  let frag = document.getElementById(ident);
+
+  let elem = document.createElement("em");
+  elem.innerHTML = member.substring(0, member.lastIndexOf("@")) + ';&emsp;';
+
+  frag.appendChild(elem);
 }
 
 
@@ -70,6 +81,16 @@ function addFromFB(){
     snapshot.forEach(function(child) {
       let note = child.val();
       notesFromFB(note.userEmail, note.place, note.date, note.time, note.description, child.key);
+
+      let membersRef = firebase.database().ref().child("notes/" + child.key + "/members/");
+
+      let key = child.key;
+      membersRef.once("value", function(snapshot){
+        snapshot.forEach(function(child) {
+          addMembers(child.val().user, key);
+        });
+
+      });
     });
   });
 }
