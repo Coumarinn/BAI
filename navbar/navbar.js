@@ -15,3 +15,7 @@ $(document).on("click","#menuButton", function (event) {
 function logOut(){
     firebase.auth().signOut();
 }
+
+function closeMyAccountWindow() {
+    $('#myAccount').removeClass("show");
+}
