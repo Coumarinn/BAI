@@ -29,11 +29,11 @@ function logIn(){
 
 }
 
-var provider = new firebase.auth.FacebookAuthProvider();
+var providerFB = new firebase.auth.FacebookAuthProvider();
 function logInByFacebook(){
     firebase.auth()
 
-        .signInWithPopup(provider).then(function (result) {
+        .signInWithPopup(providerFB).then(function (result) {
         var token = result.credential.accessToken;
         var user = result.user;
 

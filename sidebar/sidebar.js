@@ -5,6 +5,7 @@ function goTo5kmNotices (){
 function goTo10kmNotices (){
     loadNotices ();
 }
+
 function goTo20kmNotices (){
     loadNotices ();
 }
