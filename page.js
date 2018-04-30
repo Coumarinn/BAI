@@ -49,6 +49,10 @@ var app = Sammy('#main', function() {
     this.get('#/changePassword', function() {
         loadMultipleHtmlFiles("changePassword");
     });
+
+    this.get('#/noticesUsers', function() {
+        loadMultipleHtmlFiles("noticesUsers");
+    });
   });
 
   app.run('#/login');
@@ -122,7 +126,7 @@ function getMyAccountWidth() {
     if(width < 576){
         $('#myAccount').css({"width": width, 'border-left': "0", 'border-right': "0"});
     } else {
-        $('#myAccount').css({"width": 400, 'border-left': "1px solid #ddd", 
+        $('#myAccount').css({"width": 400, 'border-left': "1px solid #ddd",
         'border-right': "1px solid #ddd"});
     }
 }

@@ -11,9 +11,9 @@ function goTo20kmNotices (){
 }
 
 function loadNotices (){
-    setAsActive();
+
 }
 
 function goToHomePage(){
-    setAsActive();
+  
 }
