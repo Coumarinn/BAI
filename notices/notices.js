@@ -5,6 +5,11 @@ $(document).on("click",".btn.btn-outline-primary.join", function (event) {
     element.parentElement.childNodes[3].classList.add("d-block");
     element.parentElement.childNodes[3].classList.remove("d-none");
     join();
+
+    let noteId = element.id;
+    let userEmail = firebase.auth().currentUser.email;
+    let userId = firebase.auth().currentUser.uid;
+    firebase.database().ref().child("notes/"+ noteId + "/members/"+userId).set({user: userEmail});
 });
 
 $(document).on("click",".btn.btn-outline-secondary.cancel", function (event) {
@@ -14,10 +19,16 @@ $(document).on("click",".btn.btn-outline-secondary.cancel", function (event) {
     element.parentElement.childNodes[1].classList.add("d-block");
     element.parentElement.childNodes[1].classList.remove("d-none");
     cancel();
+
+    let noteId = element.id;
+    let userId = firebase.auth().currentUser.uid;
+    let firebaseRef = firebase.database().ref().child("notes/"+ noteId + "/members/"+userId + "/user/");
+    firebaseRef.remove();
 });
 
 function join(){
     console.log("dołącz");
+
 }
 
 function cancel(){
@@ -34,9 +45,10 @@ function notesFromFB(user, place, date, time, description, key){
     <li class="list-group-item"><b>Data: </b>' + date +'</li>\
     <li class="list-group-item"><b>Godzina: </b>' + time +'</li>\
     <li class="list-group-item"><b>Opis: </b>' + description +'</li>\
+    <li class="list-group-item"><b>Uczestnicy: </b></li>\
     <li class="list-group-item">\
-        <button type="button" class="btn btn-outline-primary join col-md-4 rounded-0" note-key=' + key + '>Dołącz</button>\
-        <button type="button" class="btn btn-outline-secondary cancel col-md-4 d-none rounded-0">Anuluj</button>\
+        <button type="button" class="btn btn-outline-primary join col-md-4 rounded-0" id=' + key + '>Dołącz</button>\
+        <button type="button" class="btn btn-outline-secondary cancel col-md-4 d-none rounded-0" id=' + key + '>Anuluj</button>\
     </li>\
   </ul>';
 
