@@ -12,6 +12,19 @@ $(document).on("click","#menuButton", function (event) {
     }
 });
 
+$(document).on("click", "#navbarDropdownMenuLink", function (event) {
+  let elem = document.getElementById('emailUsernameMenu');
+  let elem2 = document.getElementById('shortUsernameMenu');
+    if(firebase.auth().currentUser != null){
+      let userEmail = firebase.auth().currentUser.email;
+      elem.innerHTML = userEmail;
+      elem2.innerHTML = userEmail.substring(0, userEmail.lastIndexOf("@"));
+    } else {
+      elem.innerHTML = 'Użytkownik niezalogowany';
+      elem2.innerHTML = 'Użytkownik niezalogowany';
+    }
+});
+
 function logOut(){
     firebase.auth().signOut();
 }
