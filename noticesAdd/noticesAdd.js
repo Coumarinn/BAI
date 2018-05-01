@@ -7,8 +7,8 @@ function pushData(){
     var userEmail = firebase.auth().currentUser.email;
     var createdAt = firebase.database.ServerValue.TIMESTAMP;
 
-    if ((place == '' || place == undefined) || 
-       (time == '' || time == undefined)  || 
+    if ((place == '' || place == undefined) ||
+       (time == '' || time == undefined)  ||
        (date == '' || date == undefined) ) {
       window.alert("Uzupelnij pole miejsce i czas");
     } else {
@@ -28,7 +28,7 @@ function pushData(){
 
       window.alert("Zgloszenie dodane");
 
-      loadMultipleHtmlFiles("notices");
+      loadMultipleHtmlFiles("noticesUsers");
 
     }
 

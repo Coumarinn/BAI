@@ -40,13 +40,14 @@ function notesFromFB(user, place, date, time, description, key){
 
   var elem = document.createElement('div');
   elem.innerHTML = '<ul class="list-group col-md-6 d-inline-block" style="padding-bottom: 20px">\
-    <li class="list-group-item active">' + user.substring(0, user.lastIndexOf("@")) +'</li>\
+    <li class="list-group-item active" id="title-'+ key + '">' + user.substring(0, user.lastIndexOf("@")) +'</li>\
     <li class="list-group-item"><b>Miejsce: </b>'+ place +'</li>\
     <li class="list-group-item"><b>Data: </b>' + date +'</li>\
     <li class="list-group-item"><b>Godzina: </b>' + time +'</li>\
     <li class="list-group-item"><b>Opis: </b>' + description +'</li>\
-    <li class="list-group-item"><b>Uczestnicy:&nbsp; </b><span id="members-'+ key + '">\
-    </span></li>\
+    <li class="list-group-item"><b>Uczestnicy: </b>\
+    <ul list-group d-inline-block id="members-'+ key + '">\
+    </ul></li>\
     <li class="list-group-item">\
         <button type="button" class="btn btn-outline-primary join col-md-4 rounded-0" id=' + key + '>Dołącz</button>\
         <button type="button" class="btn btn-outline-secondary cancel col-md-4 d-none rounded-0" id=' + key + '>Anuluj</button>\
@@ -63,10 +64,21 @@ function addMembers(member, key) {
   let ident = "members-" + key;
   let frag = document.getElementById(ident);
 
-  let elem = document.createElement("em");
-  elem.innerHTML = member.substring(0, member.lastIndexOf("@")) + ';&emsp;';
+  let elem = document.createElement("li");
+  elem.classList.add('list-group-item')
+  elem.innerHTML = member.substring(0, member.lastIndexOf("@"));
 
   frag.appendChild(elem);
+}
+
+function markYourNotice(user, key) {
+  let ident = "title-" + key;
+  let frag = document.getElementById(ident);
+
+  if (user == frag.textContent) {
+    frag.innerHTML = '<i class="fa fa-star"></i> &#09;'+ user;
+  }
+
 }
 
 
@@ -82,6 +94,13 @@ function addFromFB(){
       let note = child.val();
       notesFromFB(note.userEmail, note.place, note.date, note.time, note.description, child.key);
 
+      // wyroznienie ogloszen, ktore uzytkownik stworzyl
+      let userEmail = firebase.auth().currentUser.email;
+      let user = userEmail.substring(0, userEmail.lastIndexOf("@"))
+      markYourNotice(user, child.key);
+
+
+      // wyciagniecie z firebase listy uczestnikow ogloszenia
       let membersRef = firebase.database().ref().child("notes/" + child.key + "/members/");
 
       let key = child.key;
