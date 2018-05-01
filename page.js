@@ -53,6 +53,10 @@ var app = Sammy('#main', function() {
     this.get('#/noticesUsers', function() {
         loadMultipleHtmlFiles("noticesUsers");
     });
+
+    this.get('#/noticesJoined', function() {
+        loadMultipleHtmlFiles("noticesJoined");
+    });
   });
 
   app.run('#/login');
