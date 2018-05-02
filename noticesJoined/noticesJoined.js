@@ -16,6 +16,8 @@ function joinedNoticesShow(){
         if (note.members[userId] != undefined) {
           notesFromFB(note.userEmail, note.place, note.date, note.time, note.description, child.key);
 
+
+
           // wyroznienie ogloszen, ktore uzytkownik stworzyl
           let userEmail = firebase.auth().currentUser.email;
           let user = userEmail.substring(0, userEmail.lastIndexOf("@"))
@@ -32,6 +34,8 @@ function joinedNoticesShow(){
             });
 
           });
+
+          anulujButton(key);
         }
     }
     });
