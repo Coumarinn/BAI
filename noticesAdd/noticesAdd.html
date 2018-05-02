@@ -7,7 +7,10 @@
           <label for="place" class="col-lg-1 col-md-2 col-sm-3 col-xs-4
           col-form-label font-weight-bold labelMobileStyle">Miejsce: </label>
           <div class="col-lg-11 col-md-10 col-sm-9 col-xs-8">
-            <input class="form-control rounded-0" type="text" id="place" placeholder="Miejsce"/>
+            <input class="form-control rounded-0" type="text" id="place" autocomplete="on" placeholder="Miejsce" onfocus="initialize()"/>
+              <input type="hidden" id="city" name="city" />
+              <input type="hidden" id="Lat" name="Lat" />
+              <input type="hidden" id="Lng" name="Lng" />
           </div>
         </div>
         <div class="form-group row">
@@ -39,3 +42,5 @@
     </ul>
   </form>
 </div>
+<script src="noticesAdd.js"></script>
+<!--<script src="http://maps.googleapis.com/maps/api/js?key=AIzaSyDL6erWZnwCcPPmSr7PEtluqRJhsgkUTfQ&libraries=places" type="text/javascript"></script>-->

@@ -1,3 +1,21 @@
+function initialize() {
+    // var input = document.getElementById('place');
+    var input = $("#place")[0];
+    var autocomplete = new google.maps.places.Autocomplete(input);
+
+    google.maps.event.addListener(autocomplete, 'place_changed', function () {
+        var place1 = autocomplete.getPlace();
+        document.getElementById('city').value = place1.name;
+        document.getElementById('Lat').value = place1.geometry.location.lat();
+        document.getElementById('Lng').value = place1.geometry.location.lng();
+//
+        window.alert(place1.geometry.location.lat());
+        window.alert(place1.geometry.location.lng());
+
+    });
+}
+google.maps.event.addDomListener(window, 'load', initialize);
+
 function pushData(){
     var place = $("#place").val();
     var date = document.getElementsByName("date")[0].value
