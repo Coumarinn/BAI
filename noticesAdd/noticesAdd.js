@@ -12,8 +12,8 @@ function initialize() {
         latitude = place1.geometry.location.lat();
         longitude = place1.geometry.location.lng();
 
-        window.alert(latitude);
-        window.alert(longitude);
+        // window.alert(latitude);
+        // window.alert(longitude);
 
     });
 }
