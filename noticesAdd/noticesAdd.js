@@ -9,8 +9,8 @@ function initialize() {
         document.getElementById('Lat').value = place1.geometry.location.lat();
         document.getElementById('Lng').value = place1.geometry.location.lng();
 //
-        latitude = place1.geometry.location.lat();
-        longitude = place1.geometry.location.lng();
+        lat = place1.geometry.location.lat();
+        lng = place1.geometry.location.lng();
 
         // window.alert(latitude);
         // window.alert(longitude);
@@ -40,8 +40,8 @@ function pushData() {
             userId: userId,
             userEmail: userEmail,
             place: place,
-            latitude: latitude,
-            longitude: longitude,
+            lat: lat,
+            lng: lng,
             date: date,
             time: time,
             description: description,
