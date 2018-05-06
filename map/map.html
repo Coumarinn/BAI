@@ -53,7 +53,7 @@
                 lat = position.coords.latitude;
                 lng = position.coords.longitude;
                 var pos = {lat: lat, lng: lng };
-                _setGeoFire();
+                // _setGeoFire();
                 var locationsRef = firebase.database().ref("notes");
                 locationsRef.on('child_added', function(snapshot) {
                     var bounds = new google.maps.LatLngBounds();
@@ -94,13 +94,13 @@
             'Error: Twoja przegladarka nie wspiera geolokalizacji');
         infoWindow.open(map);
     }
-    function _setGeoFire(){
-        geoFire.set("elo", [lat, lng]).then(()=>{
-            console.log("Location added");
-        }).catch(function(error) {
-            console.log(error);
-        });
-    }
+    // function _setGeoFire(){
+    //     geoFire.set("elo", [lat, lng]).then(()=>{
+    //         console.log("Location added");
+    //     }).catch(function(error) {
+    //         console.log(error);
+    //     });
+    // }
 </script>
 <script
         src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDL6erWZnwCcPPmSr7PEtluqRJhsgkUTfQ&callback=initMap">
