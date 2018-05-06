@@ -45,7 +45,7 @@
     function initMap() {
         map = new google.maps.Map(document.getElementById('map'), {
             center: {lat: 50.0646501, lng: 19.9449799},
-            zoom: 9
+            zoom: 14
         });
         infoWindow = new google.maps.InfoWindow;
         if (navigator.geolocation) {
@@ -68,8 +68,9 @@
                     bounds.extend(marker.getPosition());
                     marker.addListener('click', (function(data) {
                         return function(e) {
-                            infowindow.setContent(this.getPosition().toUrlValue(6) + "<br>" + data.userEmail);
-                            infowindow.open(map, this);
+                            // infoWindow.setContent(this.getPosition().toUrlValue(6) + "<br>" + data.userEmail);
+                            infoWindow.setContent("<b>Autor: </b>" + data.userEmail + "<br>" + "<b>Miejsce zbiórki: </b>" + data.place + "<br>" + "<b>Kiedy?: </b>" + data.time + "; " + data.date);
+                            infoWindow.open(map, this);
                         }
                     }(data)));
                     // map.fitBounds(bounds);
