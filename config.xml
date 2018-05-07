@@ -26,7 +26,7 @@
         <allow-intent href="itms-apps:*" />
 	</platform>
     <universal-links>
-        <host name="https://sb9x7.app.goo.gl/vhUX" scheme="https" />
+        <host name="sb9x7.app.goo.gl/vhUX" scheme="https" />
         <host name="runme-723cc.firebaseapp.com" scheme="https">
             <path url="/__/auth/callback"/>
         </host>
