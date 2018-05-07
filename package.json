@@ -1,0 +1,9 @@
+{
+    "name": "RunME!",
+    "displayName": "RunME!",
+    "version": "1.0.11",
+    "description": "Biegaj z nami!",
+    "main": "page.js",
+    "author": "students",
+    "license": "Apache-2.0"
+}
