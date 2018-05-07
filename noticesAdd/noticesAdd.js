@@ -29,11 +29,22 @@ function pushData() {
     var userEmail = firebase.auth().currentUser.email;
     var createdAt = firebase.database.ServerValue.TIMESTAMP;
 
+    //walidacja czy data ogloszenia nie jest w przeszlosci
+    var q = new Date();
+    var currentDate = q.getTime();
+    var noticeDate = Date.parse(date + ' ' + time);
+
     if ((place == '' || place == undefined) ||
         (time == '' || time == undefined) ||
         (date == '' || date == undefined)) {
         window.alert("Uzupelnij pole miejsce i czas");
-    } else {
+
+      } else if (currentDate>noticeDate){
+
+        window.alert("Nie pobiegniesz w przeszlosci");
+
+      } else {
+
         var firebaseRef = firebase.database().ref();
 
         var dataToPush = {
