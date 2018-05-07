@@ -35,11 +35,11 @@ var app = Sammy('#main', function() {
     });
 
     this.get('#/10km', function() {
-        loadMultipleHtmlFiles("notices");
+        loadMultipleHtmlFiles("notices10");
     });
 
     this.get('#/20km', function() {
-        loadMultipleHtmlFiles("notices");
+        loadMultipleHtmlFiles("notices20");
     });
 
     this.get('#/add', function() {
