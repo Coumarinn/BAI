@@ -11,7 +11,14 @@
   <plugin name="cordova-plugin-device" spec="~1.1.4" />
   <plugin name="cordova-plugin-dialogs" spec="~1.3.1" />
   <plugin name="cordova-plugin-geolocation" version="2.1.0" />
-  <access origin="*" />
+    <universal-links>
+        <host name="https://sb9x7.app.goo.gl/vhUX" scheme="https" />
+        <host name="runme-723cc.firebaseapp.com" scheme="https">
+            <path url="/__/auth/callback"/>
+        </host>
+    </universal-links>
+    <preference name="AndroidLaunchMode" value="singleTask" />
+    <access origin="*" />
     <allow-intent href="http://*/*" />
     <allow-intent href="https://*/*" />
     <allow-intent href="tel:*" />
