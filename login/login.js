@@ -49,28 +49,49 @@ function logInByFacebook(){
     });
 }
 
-var provider = new firebase.auth.GoogleAuthProvider();
-function logInByGoogle(){
-    firebase.auth()
 
-        .signInWithRedirect(provider).then(function(result) {
-        // This gives you a Google Access Token.
-        // You can use it to access the Google API.
-        var token = result.credential.accessToken;
-        // The signed-in user info.
-        var user = result.user;
-        // ...
+$('#logInByGoogle').click(
 
-        console.log(token)
-        console.log(user)
-    }).catch(function(error) {
-        // Handle Errors here.
-        var errorCode = error.code;
-        var errorMessage = error.message;
+    function() {
+        if (!firebase.auth().currentUser) {
+            var provider = new firebase.auth.GoogleAuthProvider();
 
-        console.log(error.code)
-        console.log(error.message)
+            firebase.auth().signInWithRedirect(provider);
+
+        } else {
+
+            firebase.auth().signOut();
+
+        }
+
     });
+
+// var provider = new firebase.auth.GoogleAuthProvider();
+// function logInByGoogle(){
+//
+//
+
+
+    // firebase.auth()
+    //
+    //     .signInWithRedirect(provider).then(function(result) {
+    //     // This gives you a Google Access Token.
+    //     // You can use it to access the Google API.
+    //     var token = result.credential.accessToken;
+    //     // The signed-in user info.
+    //     var user = result.user;
+    //     // ...
+    //
+    //     console.log(token)
+    //     console.log(user)
+    // }).catch(function(error) {
+    //     // Handle Errors here.
+    //     var errorCode = error.code;
+    //     var errorMessage = error.message;
+    //
+    //     console.log(error.code)
+    //     console.log(error.message)
+    // });
     //
     // firebase.auth().getRedirectResult().then(function(result) {
     //     if (result.credential) {
@@ -86,4 +107,4 @@ function logInByGoogle(){
     //     var errorCode = error.code;
     //     var errorMessage = error.message;
     // });
-}
+// }
