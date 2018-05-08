@@ -50,28 +50,19 @@ function logInByFacebook(){
 }
 
 
-$('#logInByGoogle').click(
-
-    function() {
-        if (!firebase.auth().currentUser) {
-            var provider = new firebase.auth.GoogleAuthProvider();
-
-            firebase.auth().signInWithRedirect(provider);
-
-        } else {
-
-            firebase.auth().signOut();
-
-        }
-
-    });
-
 // var provider = new firebase.auth.GoogleAuthProvider();
-// function logInByGoogle(){
-//
-//
+function logInByGoogle(){
 
+    if (!firebase.auth().currentUser) {
+        var provider = new firebase.auth.GoogleAuthProvider();
 
+        firebase.auth().signInWithRedirect(provider);
+
+    } else {
+
+        firebase.auth().signOut();
+
+    }
     // firebase.auth()
     //
     //     .signInWithRedirect(provider).then(function(result) {
@@ -92,7 +83,7 @@ $('#logInByGoogle').click(
     //     console.log(error.code)
     //     console.log(error.message)
     // });
-    //
+
     // firebase.auth().getRedirectResult().then(function(result) {
     //     if (result.credential) {
     //         // This gives you a Google Access Token.
@@ -107,4 +98,4 @@ $('#logInByGoogle').click(
     //     var errorCode = error.code;
     //     var errorMessage = error.message;
     // });
-// }
+}
