@@ -20,6 +20,9 @@ function logIn(){
 
     firebase.auth().signInWithEmailAndPassword(userEmail, userPass).catch(function(error) {
         // Handle Errors here.
+
+        window.location = '#/home';
+
         var errorCode = error.code;
         var errorMessage = error.message;
 
@@ -59,6 +62,8 @@ function logInByGoogle(){
         // The signed-in user info.
         var user = result.user;
         // ...
+
+        window.location = '#/home';
 
         console.log(token)
         console.log(user)
