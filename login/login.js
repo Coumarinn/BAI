@@ -1,8 +1,9 @@
-firebase.auth().onAuthStateChanged(user => {
+firebase.auth().onAuthStateChanged(function(user) {
+
     if(user) {
-        window.location = '#/home'; //After successful login, user will be redirected to home
+        window.location.replace("#/home"); //After successful login, user will be redirected to home
     } else {
-        window.location = '#/login';
+        // window.location = '#/login';
     }
 });
 
@@ -18,7 +19,10 @@ function logIn(){
     var userPass = document.getElementById("inputPassword").value;
 
 
-    firebase.auth().signInWithEmailAndPassword(userEmail, userPass).catch(function(error) {
+    firebase.auth().signInWithEmailAndPassword(userEmail, userPass).then(function(user) {
+
+        window.alert("Udalo sie zalogowac, witamy!")
+    }).catch(function(error) {
         // Handle Errors here.
 
         var errorCode = error.code;
