@@ -6,18 +6,18 @@
     "main": "page.js",
     "author": "students",
     "license": "Apache-2.0",
-	"dependencies": {
+    "dependencies": {
         "cordova-plugin-buildinfo": "^2.0.1",
-		"cordova-plugin-browsertab": "^0.2.0",
-		"cordova-universal-links-plugin": "^1.2.1",
-		"cordova-plugin-inappbrowser": "^3.0.0"
+        "cordova-plugin-browsertab": "^0.2.0",
+        "cordova-universal-links-plugin": "^1.2.1",
+        "cordova-plugin-inappbrowser": "^3.0.0"
     },
-	"cordova": {
+    "cordova": {
         "plugins": {
             "cordova-plugin-buildinfo": {},
-			"cordova-universal-links-plugin": {},
-			"cordova-plugin-browsertab": {},
-			"cordova-plugin-inappbrowser": {}
+            "cordova-universal-links-plugin": {},
+            "cordova-plugin-browsertab": {},
+            "cordova-plugin-inappbrowser": {}
         }
     }
 }
