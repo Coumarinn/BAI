@@ -4,6 +4,7 @@ function forgotPassword() {
 
     auth.sendPasswordResetEmail(emailAddress).then(function () {
         // Email sent.
+        window.alert("Haslo wyslane na maila")
     }).catch(function (error) {
         // An error happened.
         var errorMessage = error.message;

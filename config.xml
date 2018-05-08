@@ -28,11 +28,11 @@
         <allow-intent href="itms:*" />
         <allow-intent href="itms-apps:*" />
 	</platform>
-    <universal-links>
-        <host name="sb9x7.app.goo.gl/vhUX" scheme="https" />
-        <host name="runme-723cc.firebaseapp.com" scheme="https">
-            <path url="/__/auth/callback"/>
-        </host>
-    </universal-links>
-    <preference name="AndroidLaunchMode" value="singleTask" />
+    <!--<universal-links>-->
+        <!--<host name="sb9x7.app.goo.gl/vhUX" scheme="https" />-->
+        <!--<host name="runme-723cc.firebaseapp.com" scheme="https">-->
+            <!--<path url="/__/auth/callback"/>-->
+        <!--</host>-->
+    <!--</universal-links>-->
+    <!--<preference name="AndroidLaunchMode" value="singleTask" />-->
 </widget>
