@@ -1,6 +1,6 @@
 firebase.auth().onAuthStateChanged(user => {
     if(user) {
-        window.location = '#/home'; //After successful login, user will be redirected to home
+        window.location = '/BAI/#/home'; //After successful login, user will be redirected to home
     } else {
         window.location = '#/login';
     }
@@ -60,24 +60,27 @@ function logInByGoogle(){
         // The signed-in user info.
         var user = result.user;
         // ...
-    }).catch(function(error) {
-        // Handle Errors here.
-        var errorCode = error.code;
-        var errorMessage = error.message;
-    });
 
-    firebase.auth().getRedirectResult().then(function(result) {
-        if (result.credential) {
-            // This gives you a Google Access Token.
-            // You can use it to access the Google API.
-            var token = result.credential.accessToken;
-            // The signed-in user info.
-            var user = result.user;
-            // ...
-        }
+        console.log(token)
+        console.log(user)
     }).catch(function(error) {
         // Handle Errors here.
         var errorCode = error.code;
         var errorMessage = error.message;
     });
+    //
+    // firebase.auth().getRedirectResult().then(function(result) {
+    //     if (result.credential) {
+    //         // This gives you a Google Access Token.
+    //         // You can use it to access the Google API.
+    //         var token = result.credential.accessToken;
+    //         // The signed-in user info.
+    //         var user = result.user;
+    //         // ...
+    //     }
+    // }).catch(function(error) {
+    //     // Handle Errors here.
+    //     var errorCode = error.code;
+    //     var errorMessage = error.message;
+    // });
 }
