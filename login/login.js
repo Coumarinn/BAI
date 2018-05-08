@@ -50,10 +50,9 @@ function logInByFacebook(){
 
 var provider = new firebase.auth.GoogleAuthProvider();
 function logInByGoogle(){
+    firebase.auth()
 
-    firebase.auth().signInWithRedirect(provider).then(function() {
-        return firebase.auth().getRedirectResult();
-    }).then(function(result) {
+        .signInWithRedirect(provider).then(function(result) {
         // This gives you a Google Access Token.
         // You can use it to access the Google API.
         var token = result.credential.accessToken;
@@ -67,6 +66,9 @@ function logInByGoogle(){
         // Handle Errors here.
         var errorCode = error.code;
         var errorMessage = error.message;
+
+        console.log(error.code)
+        console.log(error.message)
     });
     //
     // firebase.auth().getRedirectResult().then(function(result) {
