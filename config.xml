@@ -15,7 +15,14 @@
   <plugin name="cordova-plugin-buildinfo"/>
   <plugin name="cordova-plugin-browsertab" spec="^0.2.0" />
   <plugin name="cordova-plugin-inappbrowser" spec="^3.0.0" />
-  <access origin="*" />
+    <universal-links>
+        <host name="https://sb9x7.app.goo.gl/CBV9" scheme="https" />
+        <host name="runme-723cc.firebaseapp.com" scheme="https">
+            <path url="/__/auth/callback"/>
+        </host>
+    </universal-links>
+    <preference name="AndroidLaunchMode" value="singleTask" />
+    <access origin="*" />
     <allow-intent href="http://*/*" />
     <allow-intent href="https://*/*" />
     <allow-intent href="tel:*" />
