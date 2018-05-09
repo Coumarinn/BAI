@@ -38,9 +38,9 @@ function logIn(){
 function logInByFacebook(){
 
     if (!firebase.auth().currentUser) {
-        var provider = new firebase.auth.GoogleAuthProvider();
+        var providerFB = new firebase.auth.FacebookAuthProvider();
 
-        firebase.auth().signInWithRedirect(provider);
+        firebase.auth().signInWithRedirect(providerFB);
 
     } else {
 
