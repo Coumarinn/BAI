@@ -34,23 +34,34 @@ function logIn(){
 
 }
 
-var providerFB = new firebase.auth.FacebookAuthProvider();
+// var providerFB = new firebase.auth.FacebookAuthProvider();
 function logInByFacebook(){
-    firebase.auth()
 
-        .signInWithPopup(providerFB).then(function (result) {
-        var token = result.credential.accessToken;
-        var user = result.user;
+    if (!firebase.auth().currentUser) {
+        var provider = new firebase.auth.GoogleAuthProvider();
 
-        console.log(token)
-        console.log(user)
-    }).catch(function (error) {
-        var errorCode = error.code;
-        var errorMessage = error.message;
+        firebase.auth().signInWithRedirect(provider);
 
-        console.log(error.code)
-        console.log(error.message)
-    });
+    } else {
+
+        firebase.auth().signOut();
+
+    }
+    // firebase.auth()
+    //
+    //     .signInWithPopup(providerFB).then(function (result) {
+    //     var token = result.credential.accessToken;
+    //     var user = result.user;
+    //
+    //     console.log(token)
+    //     console.log(user)
+    // }).catch(function (error) {
+    //     var errorCode = error.code;
+    //     var errorMessage = error.message;
+    //
+    //     console.log(error.code)
+    //     console.log(error.message)
+    // });
 }
 
 
