@@ -120,6 +120,7 @@ function getMyAccountWidth() {
     }
 }
 
+//sprawdźcie czy to Wam w czymś pomoże
 $(window).on('hashchange', function(e){
     console.log("nastąpiła zmiana adresu url");
     if (window.location.href.indexOf("BAI") == 0) {
