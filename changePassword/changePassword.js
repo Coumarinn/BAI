@@ -1,6 +1,6 @@
 function changePassword() {
     var user = firebase.auth().currentUser;
-    var newPassword = getASecureRandomPassword();
+    var newPassword = document.getElementById("newPassword").value;
 
     user.updatePassword(newPassword).then(function() {
         // Update successful.
