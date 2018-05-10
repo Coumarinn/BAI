@@ -32,15 +32,12 @@
     <platform name="android">
         <allow-intent href="market:*" />
     </platform>
-    <platform name="ios">
-        <allow-intent href="itms:*" />
-        <allow-intent href="itms-apps:*" />
-	</platform>
+
 
   <plugin name="cordova-plugin-googleplus" source="npm" spec="5.2.1">
  		  <variable name="WEB_APPLICATION_CLIENT_ID" value="216795094485-njm6727e0hg2vd42afvrdadaopuh229q.apps.googleusercontent.com" />
  		</plugin>
-    
+
     <!--<universal-links>-->
         <!--<host name="sb9x7.app.goo.gl/vhUX" scheme="https" />-->
         <!--<host name="runme-723cc.firebaseapp.com" scheme="https">-->
