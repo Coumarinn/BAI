@@ -17,7 +17,6 @@ var app = Sammy('#main', function() {
     });
 
     this.get('#/login', function() {
-        console.log("test");
         $("#main").load("login/login.html");
     });
     this.get('#/register', function() {
