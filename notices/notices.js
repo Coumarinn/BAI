@@ -71,16 +71,13 @@ function notesFromFB(user, place, date, time, description, key){
   <li class="list-group-item"><b>Data: </b>' + date +'</li>\
   <li class="list-group-item"><b>Godzina: </b>' + time +'</li>\
   <li class="list-group-item"><b>Opis: </b>' + description +'</li>\
-  <li class="list-group-item bg-success text-white text-center">Uczestnicy</li>\
-  <li class="list-group-item">Test 1</li>\
-  <li class="list-group-item">Test 2</li>\
-  <li class="list-group-item">Test 3</li>\
-  <li class="list-group-item" id="button-'+ key + '">\
-  <button type="button" class="btn btn-outline-primary join col-md-4 rounded-0" id=' + key + '>Dołącz</button>\
+  <li class="list-group-item"><b>Uczestnicy: </b>\
+  <ul list-group d-inline-block id="members-'+ key + '">\
+  </ul></li>\
+  <li class="list-group-item" id="button-'+ key + '" style="text-align: center;">\
+  <button type="button" class="btn btn-outline-primary join col-md-4 rounded-0" id=' + key + '>DOŁĄCZ</button>\
   </li>\
   </ul>';
-
-  // <li class="list-group-item" id="members-'+ key + '"></li>
 
   while (elem.childNodes[0]) {
     frag.appendChild(elem.childNodes[0]);
@@ -110,7 +107,7 @@ function markYourNotice(user, key) {
 
   if (user == frag.textContent) {
     frag.innerHTML = '<i class="fa fa-star"></i> &#09;'+ user;
-    frag2.innerHTML = '<button type="button" class="btn btn-outline-danger delete  col-md-4 rounded-0" id=' + key + '>Usuń</button>';
+    frag2.innerHTML = '<button type="button" class="btn btn-outline-danger delete  col-md-4 rounded-0" id=' + key + '>USUŃ</button>';
   }
 
 }
@@ -119,7 +116,7 @@ function anulujButton(key){
   let ident = "button-" + key;
   let frag = document.getElementById(ident);
 
-  frag.innerHTML = '<button type="button" class="btn btn-outline-secondary cancel col-md-4 rounded-0" id=' + key + '>Anuluj</button>';
+  frag.innerHTML = '<button type="button" class="btn btn-outline-secondary cancel col-md-4 rounded-0" id=' + key + '>ANULUJ</button>';
 }
 
 

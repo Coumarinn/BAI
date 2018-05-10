@@ -121,13 +121,13 @@ function getMyAccountWidth() {
 }
 
 //sprawdźcie czy to Wam w czymś pomoże
-$(window).on('hashchange', function(e){
-    console.log("nastąpiła zmiana adresu url");
-    if (window.location.href.indexOf("BAI") == 0) {
-        if (window.location.href.indexOf("#/") == 0){
-            window.location.href.split('#').join('BAI/#');
-        } else {
-            window.location.href + '/BAI'
-        }
-    }
-});
+// $(window).on('hashchange', function(e){
+//     console.log("nastąpiła zmiana adresu url");
+//     if (window.location.href.indexOf("BAI") == 0) {
+//         if (window.location.href.indexOf("#/") == 0){
+//             window.location.href.split('#').join('BAI/#');
+//         } else {
+//             window.location.href + '/BAI'
+//         }
+//     }
+// });
