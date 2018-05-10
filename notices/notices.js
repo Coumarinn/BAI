@@ -85,8 +85,6 @@ function notesFromFB(user, place, date, time, description, key){
   return frag;
 }
 
-//funkcja powinna dodać wartość do znacznika li
-//a nie tworzyć znacznik li w znaczniku li.
 function addMembers(member, key) {
   let ident = "members-" + key;
   let frag = document.getElementById(ident);
