@@ -69,6 +69,31 @@ function logInByFacebook(){
 // var provider = new firebase.auth.GoogleAuthProvider();
 function logInByGoogle(){
 
+
+  if (window.plugins) {
+    //podczas logowania sie z komorki
+  window.plugins.googleplus.login(
+          {
+                   'webClientId' : '216795094485-njm6727e0hg2vd42afvrdadaopuh229q.apps.googleusercontent.com',
+                   'offline': true
+          },
+          function (obj) {
+
+              if (!firebase.auth().currentUser) {
+                  firebase.auth().signInWithCredential(firebase.auth.GoogleAuthProvider.credential(obj.idToken))
+                  .then((success) => {
+                  })
+                  .catch((error) => {
+                        });
+              }else{
+              }
+          },
+
+      );
+
+
+} else {
+    //podczas logowania sie z strony web
     if (!firebase.auth().currentUser) {
         var provider = new firebase.auth.GoogleAuthProvider();
 
@@ -79,6 +104,7 @@ function logInByGoogle(){
         firebase.auth().signOut();
 
     }
+  }
     // firebase.auth()
     //
     //     .signInWithRedirect(provider).then(function(result) {
