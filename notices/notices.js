@@ -92,8 +92,9 @@ function addMembers(member, key) {
   let frag = document.getElementById(ident);
 
   let elem = document.createElement("li");
-  elem.classList.add('list-group-item')
-  elem.innerHTML = member.substring(0, member.lastIndexOf("@"));
+  elem.classList.add('list-group-item');
+  elem.classList.add('custom-members-list');
+  elem.innerHTML = "<span class='member-display'>" + member.substring(0, member.lastIndexOf("@")) + "</span>";
 
   frag.appendChild(elem);
 }
