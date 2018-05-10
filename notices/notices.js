@@ -72,11 +72,15 @@ function notesFromFB(user, place, date, time, description, key){
   <li class="list-group-item"><b>Godzina: </b>' + time +'</li>\
   <li class="list-group-item"><b>Opis: </b>' + description +'</li>\
   <li class="list-group-item bg-success text-white text-center">Uczestnicy</li>\
-  <li class="list-group-item" id="members-'+ key + '"></li>\
+  <li class="list-group-item">Test 1</li>\
+  <li class="list-group-item">Test 2</li>\
+  <li class="list-group-item">Test 3</li>\
   <li class="list-group-item" id="button-'+ key + '">\
   <button type="button" class="btn btn-outline-primary join col-md-4 rounded-0" id=' + key + '>Dołącz</button>\
   </li>\
   </ul>';
+
+  // <li class="list-group-item" id="members-'+ key + '"></li>
 
   while (elem.childNodes[0]) {
     frag.appendChild(elem.childNodes[0]);
@@ -84,18 +88,16 @@ function notesFromFB(user, place, date, time, description, key){
   return frag;
 }
 
+//funkcja powinna dodać 
 function addMembers(member, key) {
-  // let ident = "members-" + key;
-  // let frag = document.getElementById(ident);
+  let ident = "members-" + key;
+  let frag = document.getElementById(ident);
 
-  // let elem = document.createElement("li");
-  // elem.classList.add('list-group-item')
-  // elem.innerHTML = member.substring(0, member.lastIndexOf("@"));
-
-  // frag.appendChild(elem);
-
-  let elem = document.getElementById("members-" + key);
+  let elem = document.createElement("li");
+  elem.classList.add('list-group-item')
   elem.innerHTML = member.substring(0, member.lastIndexOf("@"));
+
+  frag.appendChild(elem);
 }
 
 function markYourNotice(user, key) {
