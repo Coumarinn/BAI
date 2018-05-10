@@ -17,6 +17,7 @@ var app = Sammy('#main', function() {
     });
 
     this.get('#/login', function() {
+        console.log("test");
         $("#main").load("login/login.html");
     });
     this.get('#/register', function() {
@@ -119,3 +120,13 @@ function getMyAccountWidth() {
         'border-right': "1px solid #ddd"});
     }
 }
+
+$(window).on('hashchange', function(e){
+    if (window.location.href.indexOf("BAI") == 0) {
+        if (window.location.href.indexOf("#/") == 0){
+            window.location.href.split('#').join('BAI/#');
+        } else {
+            window.location.href + '/BAI'
+        }
+    }
+});
