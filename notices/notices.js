@@ -85,14 +85,17 @@ function notesFromFB(user, place, date, time, description, key){
 }
 
 function addMembers(member, key) {
-  let ident = "members-" + key;
-  let frag = document.getElementById(ident);
+  // let ident = "members-" + key;
+  // let frag = document.getElementById(ident);
 
-  let elem = document.createElement("li");
-  elem.classList.add('list-group-item')
+  // let elem = document.createElement("li");
+  // elem.classList.add('list-group-item')
+  // elem.innerHTML = member.substring(0, member.lastIndexOf("@"));
+
+  // frag.appendChild(elem);
+
+  let elem = document.getElementById("members-" + key);
   elem.innerHTML = member.substring(0, member.lastIndexOf("@"));
-
-  frag.appendChild(elem);
 }
 
 function markYourNotice(user, key) {
