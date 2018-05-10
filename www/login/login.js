@@ -22,7 +22,12 @@ function logIn(){
     firebase.auth().signInWithEmailAndPassword(userEmail, userPass).then(function(user) {
 
         window.alert("Udalo sie zalogowac, witamy!")
+
+        if (window.plugins) {
+        window.location.replace("/android_asset/www/index.html#/home");
+      } else {
         window.location.replace("www/#/home");
+      }
     }).catch(function(error) {
         // Handle Errors here.
 
