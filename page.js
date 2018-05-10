@@ -25,6 +25,9 @@ var app = Sammy('#main', function() {
     this.get('#/forgotPassword', function() {
         $("#main").load("forgotPassword/forgotPassword.html");
     });
+    this.get('#/changePassword', function() {
+        $("#main").load("changePassword/changePassword.html");
+    });
 
     this.get('#/home', function() {
         loadMultipleHtmlFiles("home");

@@ -7,6 +7,7 @@ function changePassword() {
         window.alert("Haslo zresetowane")
     }).catch(function(error) {
         // An error happened.
+        var errorMessage = error.message;
         window.alert("Error : " + errorMessage);
     });
 }
