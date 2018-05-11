@@ -1,8 +1,3 @@
-function signInByFacebook(){
-}
-
-function signInByGoogle(){
-}
 
 function createAccount() {
     var userEmail = document.getElementById("inputEmail").value;
