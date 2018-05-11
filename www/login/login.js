@@ -26,7 +26,7 @@ function logIn(){
         if (window.plugins) {
         window.location.replace("/android_asset/www/index.html#/home");
       } else {
-        window.location.replace("www/#/home");
+        window.location.replace("#/home");
       }
     }).catch(function(error) {
         // Handle Errors here.
