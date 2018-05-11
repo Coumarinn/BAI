@@ -34,7 +34,7 @@ $(document).on("click",".btn.btn-outline-secondary.cancel", function (event) {
   loadMultipleHtmlFiles("noticesJoined");
 });
 
-$(document).on("click",".btn.btn-outline-primary.delete", function (event) {
+$(document).on("click",".btn.btn-outline-danger.delete", function (event) {
   var element = event.target;
   /*element.parentElement.childNodes[3].classList.add("d-none");
   element.parentElement.childNodes[3].classList.remove("d-block");
