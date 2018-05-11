@@ -53,3 +53,6 @@ https://docs.google.com/spreadsheets/d/1xC32VWKDOK8HkMxYeLluYoG1onw-JZOk-8foK0aV
 
 ## PROTOTYP
 https://marvelapp.com/2ieef8f
+
+## WERSJA WEB:
+https://runme-723cc.firebaseapp.com
